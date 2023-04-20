@@ -1,0 +1,22 @@
+class Solution(object):
+    def evenOddBit(self, n):
+        """
+        :type n: int 
+        :rtype: List[int]
+        """
+        if n==1:
+            return [1,0]
+        eo1=[]
+        eo2=[]
+        i=0
+        while n>=2:
+            if i%2==0:
+                eo1.append(n%2)
+            else:
+                eo2.append(n%2)
+            n=n//2
+            i+=1
+        if i%2==0:
+            return [sum(eo1)+n,sum(eo2)]
+        else:
+            return [sum(eo1),sum(eo2)+n]
